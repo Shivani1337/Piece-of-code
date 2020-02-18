@@ -1,0 +1,25 @@
+name=str(input("enter the name of the employee :"))
+emp_ID=int(input("enter the ID of the employee:"))
+emp_designation=str(input("enter the designation of the employee:"))
+print("name of the employee :",name)
+print("ID of the employee: ",emp_ID)
+print("Designation of the employee: ",emp_designation)
+h=int(input("Enter the number of hours worked in a week :"))
+r=int(input("Enter the payrate per hour :"))
+w=int(input("Enter the number of weeks in a month :"))
+mpay=(h*r*w)
+print("Monthly pay of an employee :" ,mpay)
+ypay=mpay*12
+print("yearly pay of an employee :" ,ypay)
+if ypay<50000:
+  t=ypay*0.10
+  a=ypay-t
+  print("salary after removing income tax :",a)
+elif ypay>50000 and ypay<100000:
+  t=ypay*0.20
+  a=ypay-t
+  print("salary after removing income tax :",a)
+else:
+  t=ypay*0.50
+  a=ypay-t
+  print("salary after removing income tax :",a)

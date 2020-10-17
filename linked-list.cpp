@@ -1,4 +1,3 @@
-//doubly linked list
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -110,6 +109,16 @@ void add_node(head *lp,int x){
 
 }
 
+void show_list(head *lp){
+    node *s=lp->next;
+    if(s==NULL){printf("Empty list");}
+    else{
+    while(s!=NULL)
+    {
+        printf(" %d",s->info);
+        s=s->next;
+    }}}
+
 void del_list(head *lp,int x){
     node *s=lp->next;
     if(s==NULL){printf("Empty list");}
@@ -134,3 +143,16 @@ void del_list(head *lp,int x){
 
 }
 
+void search_node (head* lp,int x)
+{   if(lp->next==NULL){printf("\nlist is empty\n");}
+    else
+    {    node *s;
+         s=lp->next;
+         int pos=1;
+          while(s!=NULL && s->info!=x)
+        {   pos++;
+            s=s->next;}
+         if(s==NULL){printf("\nNode not found\n");}
+         else
+         {   printf("\nNode found at position %d\n",pos);}
+    }}

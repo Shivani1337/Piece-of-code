@@ -1,2 +1,1 @@
-# Python-Programming
-Basics of python programming.
+#### Open for contributions

@@ -1,33 +1,44 @@
-public class Person
- {
-     String name;
-     int age, height;
-    public static void main(String args[])
-     {
-         Student obj1=new Student();
-         Teacher obj2=new Teacher();
-         obj1.set("Joey", 17, 6);
-         obj2.set("Koko", 22, 6);
-        System.out.println("Student Details : \n" + "Name :"+ obj1.name +"\nAge :"+ obj1.age + "\nHeight :" + obj1.height);
-        System.out.println("Teacher Details : \n" + "Name :"+ obj2.name +"\nAge :"+ obj2.age + "\nHeight :" + obj2.height);
-    }
-}
-class Student extends Person
-{
-    public void set(String s, int a, int h)
-    {
-        name=s;
-        age=a;
-        height=h;
 
-    }
+//single inheritance
+class Animal{  
+void eat(){
+ System.out.println("eating...");
+}  
+}  
+class Dog extends Animal{  
+void bark(){
+ System.out.println("barking...");
+}  
+}  
+class TestInheritance{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.bark();  
+d.eat();  
 }
-class Teacher extends Person
-{
-    public void set(String s, int a, int h)
-    {
-        name=s;
-        age=a;
-        height=h;
-    }
-}
+}  
+
+//multiple inheritance
+class Animal{  
+void eat(){
+ System.out.println("eating...");
+}  
+}  
+class Dog extends Animal{  
+void bark(){
+ System.out.println("barking...");
+}  
+}  
+class BabyDog extends Dog{  
+void weep(){
+ System.out.println("weeping...");
+}  
+}  
+class TestInheritance2{  
+public static void main(String args[]){  
+BabyDog d=new BabyDog();  
+d.weep();  
+d.bark();  
+15.	d.eat();  
+16.	}}  
+

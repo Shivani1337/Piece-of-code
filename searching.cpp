@@ -1,3 +1,4 @@
+//linear search
 #include<iostream>
 using namespace std;
 int main ()
@@ -10,11 +11,11 @@ int main ()
        {        
            cin>>a[i]; 
        }   
-    cout<<"Enter the number you want to search"<<endl;  
+    cout<<"Enter the element you want to search"<<endl;  
     cin>>num;  
     for(i=0;i<n;i++)     {      
         if(a[i]==num)         {             
-            cout<<"Position of element is  "<<i+1<<endl;        
+            cout<<"Position of element: "<<i+1<<endl;        
             count++;    
             } 
     }     
@@ -26,7 +27,7 @@ int main ()
         { 
         if(count==-1)
         { 
-        cout<<"NO such number("<<endl;       
+        cout<<"no such number("<<endl;       
         } 
             else        
             { 
@@ -34,3 +35,45 @@ int main ()
             } 
         }
 }
+
+//binary search
+#include<iostream>
+using namespace std;
+int main ()
+{
+	int n, i, a[50], s, f, l, m;
+	cout<<"Enter total number of elements:";
+	cin>>n;
+	cout<<"Enter "<<n<<" number:";
+	for (i=0; i<n; i++)
+	{
+		cin>>a[i];
+	}
+	cout<<"Enter a number to find:";
+	cin>>s;
+	f = 0;
+	l = n-1;
+	m = (f+l)/2;
+	while (f <= l)
+	{
+	if(a[m] < s)
+		{
+			f = m + 1;
+		}
+		else if(a[m] == s)
+		{
+			cout<<s<<" found at location "<<m+1<<"\n";
+			break;
+		}
+		else
+		{
+			 l = m - 1;
+		}
+		m = (f + l)/2;
+	}
+	if(f > l)
+	{
+	cout<<"Not found! "<<s<<" is not present in the list.";
+	}
+}
+

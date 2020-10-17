@@ -3,12 +3,11 @@ public class Main
 {
     public static void main(String [] args)
     {
-        System.out.println("Name-SHIVANI KUMARI");
-        System.out.println("UID-18BCS2031");
         Scanner a=new Scanner(System.in);
         System.out.println("Enter two numbers");
         int x= a.nextInt();
         int y= a.nextInt();
+        System.out.println("Select an operations(+,-,*,/) ");
         char n= a.next().charAt(0);
         double result;
         switch(n)
@@ -24,4 +23,16 @@ public class Main
                     case '*' :
                         result= x*y;
                         break;
+                        
+                        case '/' :
+                            result= x/y;
+                            break;
+                            
+                            default:
+                            System.out.println("error: operation is not found");
+                            
+                            return;
+        }
+        System.out.println(x + " " + n + " " + y + "=" + result);
+    }
 }

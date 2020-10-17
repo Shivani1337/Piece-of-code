@@ -38,12 +38,44 @@ for(i=0;infix[i]!='\0';i++);
 infix[i]=')';
 infix[i+1]='\0';
 c.push(stack,'(');
-
+for(i=0;infix[i]!='\0';i++)
+{
+if (infix[i]=='(')
+c.push(stack,infix[i]);
+elseif(c.isop(infix[i]))
+{
+while(c.priority(stack[top])>=c.priority(infix[i]))
+{
+b=c.pop(stack);
+j++;
+}
+c.push(stack,infix[i]);
+}
+elseif (infix[i]==')')
+{
+while(stack[top]!='(')
+{
+b=c.pop(stack);
+postfix[j]=b;
+j++;
+}
+c.pop(stack);
+}
+else
+{
+postfix[j]=infix[i];
+j++;
+}
+}
 cout<<"\n postfix expression:";
 for(i=0;i<j;i++)
 cout<<postfix[i];
 } 
-
+void conversion::push(char s[],char c)
+{
+top++;
+s[top]=c;
+}
 char conversion ::pop(char s[])
 {
 char c;
@@ -58,7 +90,17 @@ return(1);
 else
 return(0);
 }
-
+int conversion:: priority (char c)
+{
+if (c=='^')
+return(3);
+if((c=='*')||(c=='/'))
+return(2);
+if((c=='+')||(c=='-'))
+return(1);
+else
+return(0);
+}
 int main()
 { 
 conversion c;

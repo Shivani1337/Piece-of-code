@@ -4,6 +4,12 @@ void findFrequency(int A[], int n)
   int freq[n];
 
   for (int i = 0; i < n; i++)
+    freq[i] = 0;
+
+  for (int i = 0; i < n; i++)
+    freq[A[i]]++;
+
+  for (int i = 0; i < n; i++)
     if (freq[i])
 
       printf("%d appears %d times\n", i, freq[i]);
@@ -16,5 +22,6 @@ int main(void)
   int n = sizeof(A) / sizeof(A[0]);
 
   findFrequency(A, n);
-  }
 
+  return 0;
+}

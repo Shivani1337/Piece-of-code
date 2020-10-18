@@ -275,4 +275,39 @@ void show_list(head *lp){
         s=s->next;
     }}}
 
+void del_list(head *lp,int x){
+    node *s=lp->next;
+    if(s==NULL){printf("Empty list");}
+    else
+    {   node *r;
+        r=s=lp->next;
+        while(s!=lp&&s->info!=x)
+        {   r=s;
+            s=s->next;}
+        if(s==lp){printf("NODE NOT FOUND");}
+        else
+        {   if(r==s)
+            {   lp->next=s->next;
+                free(s); }
+            else
+            { r->next=s->next;
+              free(s);}
+        }}}
+
+void search_node (head* lp,int x)
+{   
+    if(lp->next==NULL){printf("\nlist is empty\n");}
+    else
+    {	  node *s;
+         s=lp->next;
+         int pos=1;
+
+          while(s!=lp && s->info!=x)
+        {   pos++;
+            s=s->next;}
+
+         if(s==lp){printf("\nNode not found\n");}
+         else
+         { printf("\nNode found at position %d\n",pos);}
+}}
 

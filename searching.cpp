@@ -1,17 +1,17 @@
-//linear search
+// This is a program of linear search
 #include<iostream>
 using namespace std;
 int main ()
 { 
     int i,j,n,a[100],num,count=-1; 
-       cout<<"Enter the size of array"<<endl;
+       cout<<"Enter array size"<<endl;
        cin>>n; 
        cout<<"Enter the Elements of array"<<endl;  
        for(i=0;i<n;i++)     
        {        
            cin>>a[i]; 
        }   
-    cout<<"Enter the element you want to search"<<endl;  
+    cout<<"Enter the element  to search"<<endl;  
     cin>>num;  
     for(i=0;i<n;i++)     {      
         if(a[i]==num)         {             
